@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="primary-header">
+            <div class="container">
+                <nav>
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Contact us</a>
+                </nav>
+                <nav>
+                    <a href="#">
+                        <img src="./img/threads.svg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="./img/telegram.svg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="./img/instagram.svg" alt="">
+                    </a>
+                </nav>
+            </div>
+        </div>
+        <div class="container">
+            <div class="secondary-header">
+                <div class="container-fluid">
+                    <a href="#">
+                        <img src="./img/user.svg" alt="">
+                        <span>Login</span>
+                    </a>
+                    <a href="#" class="logo">
+                        <img src="./img/logo.svg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="./img/phone.svg" alt="">
+                        <span>+7 777 123 45 67</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="third-header">
+                <div class="container-fluid">
+                    <nav>
+                        <a href="#">All news</a>
+                        <!-- Backend-->
+                        <a href="#">Politics</a>
+                    </nav>
+                    <a href="#">
+                        <img src="./img/search.svg" alt="">
+                        <span>Search</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="main-block">
+            <div class="container-fluid">
+                <div class="news-block">
+                    <h4>All news</h4>
+                    <div class="news-block__card">
+                        <img src="https://fabriclove.co.uk/cdn/shop/articles/square_thread.jpg?v=1619697363"
+                            class="news-block__img" alt="">
+                        <div class="news-block__content">
+                            <h3>Opening ceremony of the 2026 ...</h3>
+                            <span>05.06.2026</span>
+                            <a href="#">#category</a>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy text ever since the 1500s ...</p>
+                            <a href="#" class="uppercase">Read</a>
+                        </div>
+                    </div>
+                    <div class="news-block__card">
+                        <img src="https://fabriclove.co.uk/cdn/shop/articles/square_thread.jpg?v=1619697363"
+                            class="news-block__img" alt="">
+                        <div class="news-block__content">
+                            <h3>Opening ceremony of the 2026 ...</h3>
+                            <span>05.06.2026</span>
+                            <a href="#">#category</a>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy text ever since the 1500s ...</p>
+                            <a href="#" class="uppercase">Read</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="adv-block">
+                    <h3>Advertising</h3>
+                    <div class="adv-block-data">
+                        {% for adv in advs %}
+                        <div class="adv-block__content">
+                            <img src="{{ adv.image_url }}" alt="{{ adv.name }}">
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <a href="#"><img src="./img/logo-white.svg" alt=""></a>
+            <p>&copy; TOO Qaznews 2026, All rights reserved</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ category.name }} news{% endblock %}
+
+{% block content %}
+<section class="main-block">
+    <div class="container-fluid news-container">
+        <!-- Левый блок: новости -->
+        <div class="news-block">
+            {% for post in posts %}
+            <div class="news-block__card">
+                <img src="{{ post.image_url }}" class="news-block__img" alt="">
+
+                <div class="news-block__content">
+                    <h3>{{ post.title|truncatewords:10 }}</h3>
+                    <span>{{ post.created_at|date:"d.m.Y" }}</span>
+                    <a href="#">#{{ post.category.name }}</a>
+                    <p>{{ post.content|truncatewords:30 }}</p>
+                    <a href="#" class="uppercase">Read</a>
+                </div>
+            </div>
+            {% empty %}
+            <p>В этой категории пока нет новостей</p>
+            {% endfor %}
+        </div>
+
+        <!-- Правый блок: реклама -->
+        <div class="adv-block">
+            <h3>Advertising</h3>
+            <div class="adv-block-data">
+                {% for adv in advs %}
+                <div class="adv-block__content">
+                    <img src="{{ adv.image_url }}" alt="{{ adv.name }}">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
