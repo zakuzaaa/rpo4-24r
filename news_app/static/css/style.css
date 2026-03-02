@@ -27,13 +27,13 @@ a {
   display: flex;
   flex-direction: column;
 }
-/* гибкость */
-.container, .container-fluid {
-    width: 100%;
-    max-width: 1200px; /* Ограничение ширины на больших мониторах */
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 15px;
+.container {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.container-fluid {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 /* header */
